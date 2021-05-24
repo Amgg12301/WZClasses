@@ -1,6 +1,7 @@
-.app {
-  background-image: url('./background.jpg');
+.body {
+  background-image: url('background.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .home {
@@ -17,7 +18,7 @@
 
 .form {
   width: 500px;
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: center;
 }
 

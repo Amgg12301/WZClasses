@@ -1,10 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Form, Container, Grid} from 'semantic-ui-react'
+import { Button, Form, Container, Grid} from 'semantic-ui-react';
+import Loadout from './Loadout';
 
 function Search(){
 
     const [input, setInput] = useState("hello")
+    const [toggleLoadout, setToggleLoadout] = useState(false)
+    let loadout;
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -14,6 +17,7 @@ function Search(){
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(input)
+        setToggleLoadout(true)
     }
 
     return (
@@ -35,6 +39,7 @@ function Search(){
                     </Grid.Row>
                 </Grid>
             </Container>
+            {toggleLoadout ? <Loadout /> : ""}
         </div>
     )
 }
