@@ -15,14 +15,13 @@ function Search(){
     const [input, setInput] = useState("hello")
     const [toggleLoadout, setToggleLoadout] = useState(false)
     const [gun, setGun] = useState(false)
-    let loadout;
 
     const handleChange = (event) => {
         event.preventDefault()
         setInput(event.target.value.toLowerCase())
     }
 
-    function validateInput(){
+    const validateInput = () => {
         var max_similarity = 0
         var gun = ""
 
