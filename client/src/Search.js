@@ -55,7 +55,7 @@ function Search(){
                             <Form.Field>
                                 <input
                                     type="text"
-                                    placeholder="Ex. CR-56 Amax, CW AK-47, XM4, Bullfrog etc."
+                                    placeholder="Ex. CR-56 AMAX, CW AK-47, XM4, Bullfrog etc."
                                     onChange={handleChange}
                                 />
                             </Form.Field>
