@@ -1,8 +1,14 @@
-.app {
-  font-family: Verdana;
+/* * {
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to bottom right, darkblue, purple);
   background-size: cover;
-  color: aliceblue;
+ } */
+
+.app {
+  font-family: Verdana;
+  /* color: aliceblue; */
+  color: black;
 }
 
 .home {
@@ -40,4 +46,11 @@
   text-align: center;
   padding-top: 30px;
   font-size: medium;
+}
+
+.contact {
+  position:fixed;
+  text-align: center;
+  bottom: 10px;
+  left: 47%;
 }

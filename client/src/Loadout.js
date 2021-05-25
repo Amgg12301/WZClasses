@@ -44,7 +44,7 @@ function Loadout(props){
                 </Card.Group>
             </div>
             <div className="message">
-                {list.length == 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
+                {list.length === 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
             </div>
         </div>
     )
