@@ -1,1 +1,1 @@
-# WZLoadouts
+# CODLoadouts
