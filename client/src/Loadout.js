@@ -39,13 +39,12 @@ function Loadout(props){
         <div className="loadout">
             <h3>{props.gun}</h3>
             <div className="cards">
-                {/* <Card>
-                    <Card.Content header = 'Creator 1' />
-                    <Card.Content description = {description} />
-                </Card> */}
                 <Card.Group>
                     {list}
                 </Card.Group>
+            </div>
+            <div className="message">
+                {list.length == 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
             </div>
         </div>
     )

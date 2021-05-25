@@ -57,6 +57,7 @@ function Search(){
                                     type="text"
                                     placeholder="Ex. CR-56 AMAX, CW AK-47, XM4, Bullfrog etc."
                                     onChange={handleChange}
+                                    required
                                 />
                             </Form.Field>
                             <Button className="search-button"color="blue" type='submit'>Search</Button>
