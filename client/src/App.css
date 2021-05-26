@@ -38,8 +38,13 @@
 
 .cards {
   padding-top: 10px;
-  padding-left: 135px;
+  padding-left: 35px;
   color: black;
+}
+
+.cards #card {
+  width: 23%;
+  border-radius: 25px;
 }
 
 .message {
@@ -53,4 +58,8 @@
   text-align: center;
   bottom: 10px;
   left: 47%;
+}
+
+.amax {
+  border-radius: 100px;
 }

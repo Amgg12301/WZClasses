@@ -9,10 +9,12 @@ function Loadout(props){
     var socials = ""
     var list = []
     const [data, setData] = useState({})
+    const API_KEY = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
+        console.log(API_KEY)
         Tabletop.init({
-          key: "1E8kvkZdDU4JQHgyl5GUgXXCHOaseGjYtBPG-53IlzXk",
+          key: API_KEY,
           simpleSheet: true,
         }).then(function (data) {
           setData(data)
@@ -33,7 +35,8 @@ function Loadout(props){
             socials = <p><b>Twitch: </b>{data[i]["Twitch"]}<br></br><b>Youtube:</b> {data[i]["Youtube"]}<br></br><b>Twitter:</b> {data[i]["Twitter"]}
                         <br></br><b>Instagram:</b> {data[i]["Instagram"]}</p>
                         
-            list.push(<Card>
+            list.push(
+                    <Card id="card">
                         <Card.Content header = {creator} />
                         <Card.Content description = {description} />
                         <Card.Content extra>
