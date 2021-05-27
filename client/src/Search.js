@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react';
 import { Button, Form, Container, Grid} from 'semantic-ui-react';
 import Loadout from './Loadout';
@@ -15,6 +15,7 @@ function Search(){
     const [input, setInput] = useState("hello")
     const [toggleLoadout, setToggleLoadout] = useState(false)
     const [gun, setGun] = useState(false)
+    const myRef = useRef(null)
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -24,25 +25,49 @@ function Search(){
     const validateInput = () => {
         var max_similarity = 0
         var gun = ""
+        var isValid = false
 
         for(var i = 0; i < gunsList.length; i++){
             var similarity = stringSimilarity.compareTwoStrings(input, gunsList[i].toLowerCase())
             console.log(similarity, input, gunsList[i].toLowerCase())
+
             if (similarity > max_similarity){
                 max_similarity = similarity
                 gun = gunsList[i]
             }
+
         }
 
         setGun(gun)
+        if (gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)){
+            isValid = true
+        }
+
+        return isValid
+    }
+
+    // const executeScroll = () => myRef.current.scrollIntoView()
+
+    const executeScroll = () => {
+        window.scrollTo({
+            behavior: 'smooth',
+            top: myRef.current
+        })
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         console.log(input)
-        validateInput();
+
+        var isValid = validateInput()
         console.log(gun)
-        setToggleLoadout(true)
+
+        if (isValid){
+            setToggleLoadout(true)
+            executeScroll()
+        } else {
+            alert('Please enter a valid gun name')
+        }
     }
 
     return (
@@ -61,13 +86,13 @@ function Search(){
                                         required
                                     />
                                 </Form.Field>
-                                <Button className="search-button"color="blue" type='submit'>Search</Button>
+                                <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
                             </Form>
                         </Grid.Row>
                     </Grid>
                 </Container>
             </div>
-            <div className="show-loadouts">
+            <div ref={myRef} className="show-loadouts">
                 {toggleLoadout ? <Loadout gun={gun}/> : ""}
             </div>
         </div>

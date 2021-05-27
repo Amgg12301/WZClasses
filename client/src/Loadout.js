@@ -6,6 +6,7 @@ function Loadout(props){
 
     var creator = ""
     var description = ""
+    var meta = ""
     var socials = ""
     var list = []
     const [data, setData] = useState({})
@@ -22,12 +23,14 @@ function Loadout(props){
                                     {data[i]["Laser"]}<br></br><b>Ammunition: </b>{data[i]["Ammunition"]}<br></br>
                                     <b>Optic: </b>{data[i]["Optic"]}<br></br><b>Rear Grip: </b>{data[i]["Rear Grip"]}
                                     <br></br><b>Stock: </b>{data[i]["Stock"]}<br></br><b>Perk: </b>{data[i]["Perk"]}</p>
+                meta = <p>{data[i]["Description"]}</p>
                 socials = <p><b>Twitch: </b>{data[i]["Twitch"]}<br></br><b>Youtube:</b> {data[i]["Youtube"]}<br></br><b>Twitter:</b> {data[i]["Twitter"]}
                             <br></br><b>Instagram:</b> {data[i]["Instagram"]}</p>
                             
                 list.push(
                         <Card id="card">
                             <Card.Content header = {creator} />
+                            <Card.Content meta = {meta} />
                             <Card.Content description = {description} />
                             <Card.Content extra>
                                 {socials}
