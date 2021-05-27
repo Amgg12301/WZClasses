@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Tabletop from "tabletop";
 import { Card } from 'semantic-ui-react';
 
@@ -11,6 +11,14 @@ function Loadout(props){
     var list = []
     const [data, setData] = useState({})
     const API_KEY = process.env.REACT_APP_API_KEY
+    const myRef = useRef(null)
+
+    const executeScroll = () => {
+        window.scrollTo({
+            behavior: 'smooth',
+            top: myRef.current.offsetTop + 550,
+        });
+    }
 
     const modifyData = () => {
         for(var i = 0; i < data.length; i++){
@@ -38,31 +46,31 @@ function Loadout(props){
                         </Card>)
             }
         }
-
-        return list.length
+        
+        return list
     }
 
     useEffect(() => {
-        console.log(API_KEY)
         Tabletop.init({
           key: API_KEY,
           simpleSheet: true,
         }).then(function (data) {
           setData(data)
           console.log(data)
-        });
-    }, [API_KEY]);
+          executeScroll()
+        })
+    }, [API_KEY])
 
     return (
-        <div className="loadout">
-            <h3>{props.gun}</h3>
+        <div ref={myRef} className="loadout">
+            <h2>{props.gun}</h2>
             <div className="cards">
                 <Card.Group>
-                    {list}
+                    {modifyData()}
                 </Card.Group>
             </div>
             <div className="message">
-                {modifyData() === 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
+                {list.length === 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
             </div>
         </div>
     )

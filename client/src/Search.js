@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Button, Form, Container, Grid} from 'semantic-ui-react';
 import Loadout from './Loadout';
@@ -15,7 +15,6 @@ function Search(){
     const [input, setInput] = useState("hello")
     const [toggleLoadout, setToggleLoadout] = useState(false)
     const [gun, setGun] = useState(false)
-    const myRef = useRef(null)
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -46,15 +45,6 @@ function Search(){
         return isValid
     }
 
-    // const executeScroll = () => myRef.current.scrollIntoView()
-
-    const executeScroll = () => {
-        window.scrollTo({
-            behavior: 'smooth',
-            top: myRef.current
-        })
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(input)
@@ -64,7 +54,6 @@ function Search(){
 
         if (isValid){
             setToggleLoadout(true)
-            executeScroll()
         } else {
             alert('Please enter a valid gun name')
         }
@@ -92,7 +81,7 @@ function Search(){
                     </Grid>
                 </Container>
             </div>
-            <div ref={myRef} className="show-loadouts">
+            <div className="show-loadouts">
                 {toggleLoadout ? <Loadout gun={gun}/> : ""}
             </div>
         </div>
