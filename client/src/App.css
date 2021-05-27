@@ -1,29 +1,52 @@
-/* * {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom right, darkblue, purple);
-  background-size: cover;
- } */
-
 .app {
   font-family: Verdana;
   /* color: aliceblue; */
   color: black;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
 .home {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
+}
+
+.contact {
+  position: relative;
+  text-align: center;
+  padding-right: 15px;
+  padding-top: 5px;
+  float: right;
+}
+
+a:hover{
+  transform: scale(1.25);
+}
+
+.home #logo {
+  font-family: Marker Felt, fantasy;
+  font-weight: 600;
+  font-variant: small-caps;
+  font-size: 35px;
+  text-align: left;
+  padding-left: 10px;
+  float: left;
+}
+
+.search-text {
+  padding-top: 200px;
+  text-align: center;
 }
 
 .search-title {
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
 }
 
 .form {
   width: 500px;
-  padding-top: 50px;
   text-align: center;
 }
 
@@ -51,13 +74,6 @@
   text-align: center;
   padding-top: 30px;
   font-size: medium;
-}
-
-.contact {
-  position:fixed;
-  text-align: center;
-  bottom: 10px;
-  left: 47%;
 }
 
 .amax {

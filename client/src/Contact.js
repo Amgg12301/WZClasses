@@ -1,9 +1,11 @@
 import React from 'react';
+import Social from './Social';
 
 function Contact(){
     return (
         <div className="contact">
-            <p>Contact Us!</p>
+            <p id="title">Let's Stay Connected!</p>
+            <Social id="icons"/>
         </div>
     )
 }
