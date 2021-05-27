@@ -46,26 +46,30 @@ function Search(){
     }
 
     return (
-        <div className="search">
-            <Container fluid className="container">
-                <Grid>
-                    <Grid.Row centered>
-                        <Form className="form" onSubmit={handleSubmit}>
-                        <p className="search-title">Enter the gun name</p>
-                            <Form.Field>
-                                <input
-                                    type="text"
-                                    placeholder="Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </Form.Field>
-                            <Button className="search-button"color="blue" type='submit'>Search</Button>
-                        </Form>
-                    </Grid.Row>
-                </Grid>
-            </Container>
-            {toggleLoadout ? <Loadout gun={gun}/> : ""}
+        <div>
+            <div className="search">
+                <Container fluid className="container">
+                    <Grid>
+                        <Grid.Row centered>
+                            <Form className="form" onSubmit={handleSubmit}>
+                            <p className="search-title">Enter the gun name</p>
+                                <Form.Field>
+                                    <input
+                                        type="text"
+                                        placeholder="Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Field>
+                                <Button className="search-button"color="blue" type='submit'>Search</Button>
+                            </Form>
+                        </Grid.Row>
+                    </Grid>
+                </Container>
+            </div>
+            <div className="show-loadouts">
+                {toggleLoadout ? <Loadout gun={gun}/> : ""}
+            </div>
         </div>
     )
 }
