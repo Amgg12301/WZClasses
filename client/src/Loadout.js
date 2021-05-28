@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Tabletop from "tabletop";
 import { Card } from 'semantic-ui-react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Contact from './Contact';
 
-function Loadout(props){
-
+function Loadout(){
+    
     var creator = ""
     var description = ""
     var meta = ""
@@ -13,14 +13,12 @@ function Loadout(props){
     var list = []
     const [data, setData] = useState({})
     const API_KEY = process.env.REACT_APP_API_KEY
-    console.log(props.gun)
-    let gun = "abc"
+    let location = useLocation()
+    let gun = location.state.gun
 
     const modifyData = () => {
         for(var i = 0; i < data.length; i++){
-            console.log(data[i]["Gun"], gun)
             if (data[i]["Gun"].toLowerCase() === gun.toLowerCase()) {
-                console.log(data[i])
                 creator = <b>{data[i]["Creator"]}</b>
                 description = <p><b>Muzzle: </b>{data[i]["Muzzle"]}<br></br><b>Barrel: </b>{data[i]["Barrel"]}
                                     <br></br><b>Underbarrel: </b>{data[i]["Underbarrel"]}<br></br><b>Laser: </b>
@@ -43,10 +41,12 @@ function Loadout(props){
             }
         }
 
-        if (list.length == 0){
+        console.log(list)
+
+        if (list.length === 0){
             return (
                 <div className="message">
-                    <i class="fa fa-refresh fa-spin"></i>
+                    <p>Sorry, we have no loadouts for this gun right now!</p>
                 </div>
             )
         } else {
@@ -60,7 +60,6 @@ function Loadout(props){
           simpleSheet: true,
         }).then(function (data) {
           setData(data)
-          console.log(data)
         })
     }, [API_KEY])
 

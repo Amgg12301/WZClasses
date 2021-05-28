@@ -72,11 +72,16 @@ a:hover {
 .loadout {
   text-align: center;
   padding-top: 120px;
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .cards {
   padding-top: 10px;
   padding-left: 25px;
+  padding-bottom: 50px;
   color: black;
 }
 

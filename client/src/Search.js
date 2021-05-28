@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Button, Form, Container, Grid} from 'semantic-ui-react';
-import Loadout from './Loadout';
 
 function Search(){
 
@@ -13,9 +12,8 @@ function Search(){
                         'Oden', 'SP-R 208', 'Stoner 63', 'Uzi', 'AK-74u', 'Crossbow', 'FiNN', 'M91', 'PP19 Bizon', 'Type 63', 'XM4', 
                         'AX-50', 'Fennec', 'Krig 6', 'Milano 821', 'RPD', 'Groza', 'Holger-26', 'M60', 'MG34', 'P90', 'Pellington 703', 
                         'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45']
-    const [input, setInput] = useState("hello")
-    const [toggleLoadout, setToggleLoadout] = useState(false)
-    const [gun, setGun] = useState(false)
+    const [input, setInput] = useState("")
+    const history = useHistory();
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -29,7 +27,6 @@ function Search(){
 
         for(var i = 0; i < gunsList.length; i++){
             var similarity = stringSimilarity.compareTwoStrings(input, gunsList[i].toLowerCase())
-            console.log(similarity, input, gunsList[i].toLowerCase())
 
             if (similarity > max_similarity){
                 max_similarity = similarity
@@ -38,26 +35,33 @@ function Search(){
 
         }
 
-        setGun(gun)
-        if ((gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)) && max_similarity > 0.50){
+        if ((gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)) 
+            && max_similarity > 0.50 && gun.length > 0){
             isValid = true
         }
 
-        return isValid
+        return [isValid, gun]
+    }
+
+    const goToLoadouts = (arr) => {
+        if (arr[0]){
+            history.push({
+                pathname: 'loadout',
+                state: {
+                    gun: arr[1],
+                },
+            })
+        } else {
+            alert('Please enter a valid gun name')
+        }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(input)
 
-        var isValid = validateInput()
-        console.log(gun)
+        var arr = validateInput()
 
-        if (isValid){
-            setToggleLoadout(true)
-        } else {
-            alert('Please enter a valid gun name')
-        }
+        goToLoadouts(arr)
     }
 
     return (
@@ -87,19 +91,12 @@ function Search(){
                                         required
                                     />
                                 </Form.Field>
-                                <Link to="/loadout" state={{
-                                    gun: gun
-                                }}>
-                                    <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
-                                </Link>
+                                <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
                             </Form>
                         </Grid.Row>
                     </Grid>
                 </Container>
             </div>
-            {/* <div className="show-loadouts">
-                {toggleLoadout ? <Loadout gun={gun}/> : ""}
-            </div> */}
         </div>
     )
 }

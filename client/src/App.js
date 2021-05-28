@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './Home';
 import 'semantic-ui-css/semantic.min.css';
-import { Route, Switch, withRouter } from 'react-router';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Loadout from './Loadout';
 
 function App() {
