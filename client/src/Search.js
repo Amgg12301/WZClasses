@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Form, Container, Grid} from 'semantic-ui-react';
 import Loadout from './Loadout';
 
@@ -38,7 +39,7 @@ function Search(){
         }
 
         setGun(gun)
-        if (gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)){
+        if ((gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)) && max_similarity > 0.50){
             isValid = true
         }
 
@@ -61,6 +62,17 @@ function Search(){
 
     return (
         <div>
+            <div className="search-text">
+                <div className="intro-text">
+                    <p>Tired of looking for the best loadout everytime the meta changes?</p>
+                    <p>Don't know what to use with so many content creators out there?</p>
+                    <p>This is your one-stop shop to find the best loadouts for every gun created 
+                        by famous Call of Duty streamers and content creators! You can easily acquire 
+                        the loadout for any gun for any type of build within a couple of seconds. In 
+                        addition, you'll be able to see the gameplay associated with each loadout to 
+                        get a better feel for what's best for you. Now, let's get to finding that loadout for you!</p>
+                </div>
+            </div>
             <div className="search">
                 <Container fluid className="container">
                     <Grid>
@@ -75,15 +87,19 @@ function Search(){
                                         required
                                     />
                                 </Form.Field>
-                                <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
+                                <Link to="/loadout" state={{
+                                    gun: gun
+                                }}>
+                                    <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
+                                </Link>
                             </Form>
                         </Grid.Row>
                     </Grid>
                 </Container>
             </div>
-            <div className="show-loadouts">
+            {/* <div className="show-loadouts">
                 {toggleLoadout ? <Loadout gun={gun}/> : ""}
-            </div>
+            </div> */}
         </div>
     )
 }

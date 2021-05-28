@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import Tabletop from "tabletop";
 import { Card } from 'semantic-ui-react';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import Contact from './Contact';
 
 function Loadout(props){
 
@@ -11,19 +13,13 @@ function Loadout(props){
     var list = []
     const [data, setData] = useState({})
     const API_KEY = process.env.REACT_APP_API_KEY
-    const myRef = useRef(null)
-
-    const executeScroll = () => {
-        window.scrollTo({
-            behavior: 'smooth',
-            top: myRef.current.offsetTop + 550,
-        });
-    }
+    console.log(props.gun)
+    let gun = "abc"
 
     const modifyData = () => {
         for(var i = 0; i < data.length; i++){
-            console.log(data[i]["Gun"], props.gun)
-            if (data[i]["Gun"].toLowerCase() === props.gun.toLowerCase()) {
+            console.log(data[i]["Gun"], gun)
+            if (data[i]["Gun"].toLowerCase() === gun.toLowerCase()) {
                 console.log(data[i])
                 creator = <b>{data[i]["Creator"]}</b>
                 description = <p><b>Muzzle: </b>{data[i]["Muzzle"]}<br></br><b>Barrel: </b>{data[i]["Barrel"]}
@@ -46,8 +42,16 @@ function Loadout(props){
                         </Card>)
             }
         }
-        
-        return list
+
+        if (list.length == 0){
+            return (
+                <div className="message">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+            )
+        } else {
+            return list
+        }
     }
 
     useEffect(() => {
@@ -57,20 +61,24 @@ function Loadout(props){
         }).then(function (data) {
           setData(data)
           console.log(data)
-          executeScroll()
         })
     }, [API_KEY])
 
     return (
-        <div ref={myRef} className="loadout">
-            <h2>{props.gun}</h2>
-            <div className="cards">
-                <Card.Group>
-                    {modifyData()}
-                </Card.Group>
+        <div>
+            <div className="home">
+                <Link to="/">
+                    <p id="logo">CODLoadouts</p>
+                </Link>
+                <Contact />
             </div>
-            <div className="message">
-                {list.length === 0 ? "Sorry, we have no loadouts for this gun right now!" : ""}
+            <div className="loadout">
+                <h2>{gun}</h2>
+                <div className="cards">
+                    <Card.Group>
+                        {modifyData()}
+                    </Card.Group>
+                </div>
             </div>
         </div>
     )

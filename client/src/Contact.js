@@ -4,7 +4,7 @@ import Social from './Social';
 function Contact(){
     return (
         <div className="contact">
-            <p id="title">Let's Stay Connected!</p>
+            <p id="title">Stay Connected!</p>
             <Social id="icons"/>
         </div>
     )
