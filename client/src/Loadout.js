@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Button, Icon } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
-import Contact from './Contact';
 
 function Loadout(){
     

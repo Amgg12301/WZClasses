@@ -55,18 +55,25 @@ a:hover {
 
 .search-title {
   font-size: 20px;
-  padding-top: 50px;
   text-align: center;
   font-variant: small-caps;
 }
 
 .form {
-  width: 400px;
+  width: 350px;
   text-align: center;
 }
 
 .search-button {
   width: 150px;
+}
+
+.search-button-div {
+  padding-top: 25px;
+}
+
+.form-field-div {
+  padding-top: 10px;
 }
 
 .loadout {
@@ -113,6 +120,7 @@ a:hover {
   float: right;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 60px;
 }
 
 .message-button {
@@ -122,6 +130,10 @@ a:hover {
 .loadouts-button {
   float: left;
   padding-left: 60px;
+}
+
+.toggle {
+  text-align: center;
 }
 
 .toggle-switch {
@@ -136,7 +148,7 @@ a:hover {
 .toggle-switch .switch {
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: gray;
   border-radius: 25px;
   top: 0;
   right: 0;
@@ -151,14 +163,31 @@ a:hover {
   top: 2px;
   width: 21px;
   height: 21px;
-  background-color: #aaa;
+  background-color: white;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 .toggle-switch input[type="checkbox"]:checked + .switch::before {
   transform: translateX(25px);
-  background-color: #6699cc;
+  background-color: white;
 }
 .toggle-switch input[type="checkbox"]:checked + .switch {
-  background-color: #336699;
+  background-color: blue;
+}
+
+.toggle-form {
+  display: inline-flex;
+  padding-bottom: 20px;
+}
+
+.toggle-form #title {
+  font-size: 20px;
+  font-variant: small-caps;
+  float: right;
+}
+
+.toggle-form #toggle-button {
+  float: left;
+  padding-left: 150px;
+  padding-right: 20px;
 }

@@ -86,32 +86,40 @@ function Search(){
                     <p>Don't know what to use with so many content creators out there?</p>
                     <p>This is your one-stop shop to find the best loadouts for every gun created 
                         by famous Warzone streamers and content creators! You can easily acquire 
-                        the loadout for any gun for any type of build within a couple of seconds. In 
-                        addition, you'll be able to see the gameplay associated with each loadout to 
-                        get a better feel for what's best for you. Now, let's get to finding that loadout for you!</p>
+                        the loadout for any gun for any type of build within a couple of seconds. 
+                        Click the toggle to either get all loadouts used by a specific content
+                        creator or all loadouts for a specific gun. Now, let's get to finding that loadout for you!</p>
                 </div>
             </div>
-            <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
             <div className="search">
+                <div className="toggle-form">
+                    <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
+                    {isToggled ? <p id="title">Find Loadouts for Creator</p>
+                                                : <p id="title">Find Loadouts for Gun</p>}
+                </div>
                 <Container fluid className="container">
                     <Grid>
                         <Grid.Row centered>
                             <Form className="form" onSubmit={handleSubmit}>
-                            <p className="search-title">Enter the gun name</p>
-                                <Form.Field>
-                                    <input
-                                        type="text"
-                                        placeholder="Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Field>
-                                <Button className="search-button"color="blue" type='submit' animated='fade'>
-                                    <Button.Content visible>Get Loadouts</Button.Content>
-                                        <Button.Content hidden>
-                                            <Icon name='arrow right' /> 
-                                        </Button.Content>   
-                                </Button>
+                                <div className="form-field-div">
+                                    <Form.Field>
+                                        <input
+                                            type="text"
+                                            placeholder={isToggled ? "Ex. Amogh, Alex, Kevin, Chris, etc."
+                                                                    : "Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </Form.Field>
+                                </div>
+                                <div className="search-button-div">
+                                    <Button className="search-button"color="blue" type='submit' animated='fade'>
+                                        <Button.Content visible>Get Loadouts</Button.Content>
+                                            <Button.Content hidden>
+                                                <Icon name='arrow right' /> 
+                                            </Button.Content>   
+                                    </Button>
+                                </div>
                             </Form>
                         </Grid.Row>
                     </Grid>
