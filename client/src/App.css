@@ -78,6 +78,10 @@ a:hover {
   height: 100%;
 }
 
+.loadout #gun-name {
+  padding-right: 240px;
+}
+
 .cards {
   padding-top: 10px;
   padding-left: 25px;
@@ -92,7 +96,6 @@ a:hover {
 
 .message {
   text-align: center;
-  padding-top: 30px;
   font-size: medium;
 }
 
@@ -110,4 +113,13 @@ a:hover {
   float: right;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.message-button {
+  padding-top: 15px;
+}
+
+.loadouts-button {
+  float: left;
+  padding-left: 60px;
 }

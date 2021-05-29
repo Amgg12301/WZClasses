@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Tabletop from "tabletop";
-import { Card } from 'semantic-ui-react';
+import React from "react";
+import { Card, Button, Icon } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import Contact from './Contact';
 
@@ -11,10 +10,10 @@ function Loadout(){
     var meta = ""
     var socials = ""
     var list = []
-    const [data, setData] = useState({})
-    const API_KEY = process.env.REACT_APP_API_KEY
+
     let location = useLocation()
     let gun = location.state.gun
+    let data = location.state.data
 
     const modifyData = () => {
         for(var i = 0; i < data.length; i++){
@@ -41,27 +40,8 @@ function Loadout(){
             }
         }
 
-        console.log(list)
-
-        if (list.length === 0){
-            return (
-                <div className="message">
-                    <p>Sorry, we have no loadouts for this gun right now!</p>
-                </div>
-            )
-        } else {
-            return list
-        }
+        return list
     }
-
-    useEffect(() => {
-        Tabletop.init({
-          key: API_KEY,
-          simpleSheet: true,
-        }).then(function (data) {
-          setData(data)
-        })
-    }, [API_KEY])
 
     return (
         <div>
@@ -72,15 +52,31 @@ function Loadout(){
                 <Contact />
             </div>
             <div className="loadout">
-                <h2>{gun}</h2>
+                <div className="title">
+                    <div className="loadouts-button">
+                        <Link to="/">
+                            <Button color="red" animated>
+                                <Button.Content visible>Find More Loadouts</Button.Content>
+                                    <Button.Content hidden>
+                                        <Icon name='arrow left' />
+                                </Button.Content>
+                            </Button>
+                        </Link>
+                    </div>
+                    <h2 id="gun-name">{gun}</h2>
+                </div>
                 <div className="cards">
                     <Card.Group>
                         {modifyData()}
                     </Card.Group>
                 </div>
+                {list.length === 0 ? <div className="message">
+                                        <p>Sorry, we have no loadouts for this gun right now!</p>
+                                    </div> : ""}
             </div>
         </div>
     )
+    // }
 }
 
 export default Loadout;

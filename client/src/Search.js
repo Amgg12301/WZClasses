@@ -1,7 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, Container, Grid} from 'semantic-ui-react';
+import Tabletop from "tabletop";
 
 function Search(){
 
@@ -14,6 +15,8 @@ function Search(){
                         'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45']
     const [input, setInput] = useState("")
     const history = useHistory();
+    const [data, setData] = useState({})
+    const API_KEY = process.env.REACT_APP_API_KEY
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -35,8 +38,7 @@ function Search(){
 
         }
 
-        if ((gun.toLowerCase().includes(input) || input.toLowerCase().includes(gun)) 
-            && max_similarity > 0.50 && gun.length > 0){
+        if (max_similarity > 0.30 && gun.length > 0){
             isValid = true
         }
 
@@ -49,6 +51,7 @@ function Search(){
                 pathname: 'loadout',
                 state: {
                     gun: arr[1],
+                    data: data,
                 },
             })
         } else {
@@ -64,6 +67,18 @@ function Search(){
         goToLoadouts(arr)
     }
 
+    useEffect(() => {
+        Tabletop.init({
+          key: API_KEY,
+          simpleSheet: true,
+        }).then(function (data) {
+          setData(data)
+        })
+    }, [API_KEY])
+
+    // work on adding feature to get all loadouts by single streamer 
+    // in addition to current feature of get all loadouts for single gun
+
     return (
         <div>
             <div className="search-text">
@@ -71,7 +86,7 @@ function Search(){
                     <p>Tired of looking for the best loadout everytime the meta changes?</p>
                     <p>Don't know what to use with so many content creators out there?</p>
                     <p>This is your one-stop shop to find the best loadouts for every gun created 
-                        by famous Call of Duty streamers and content creators! You can easily acquire 
+                        by famous Warzone streamers and content creators! You can easily acquire 
                         the loadout for any gun for any type of build within a couple of seconds. In 
                         addition, you'll be able to see the gameplay associated with each loadout to 
                         get a better feel for what's best for you. Now, let's get to finding that loadout for you!</p>
