@@ -45,21 +45,15 @@ function Loadout(){
 
     return (
         <div>
-            <div className="home">
-                <Link to="/">
-                    <p id="logo">CODLoadouts</p>
-                </Link>
-                <Contact />
-            </div>
             <div className="loadout">
                 <div className="title">
                     <div className="loadouts-button">
                         <Link to="/">
-                            <Button color="red" animated>
+                            <Button color="red" animated='fade'>
                                 <Button.Content visible>Find More Loadouts</Button.Content>
                                     <Button.Content hidden>
                                         <Icon name='arrow left' />
-                                </Button.Content>
+                                    </Button.Content>
                             </Button>
                         </Link>
                     </div>
@@ -76,7 +70,6 @@ function Loadout(){
             </div>
         </div>
     )
-    // }
 }
 
 export default Loadout;

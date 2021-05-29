@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Form, Container, Grid} from 'semantic-ui-react';
+import { Button, Form, Container, Grid, Icon } from 'semantic-ui-react';
 import Tabletop from "tabletop";
+import Toggle from './Toggle';
 
 function Search(){
 
@@ -14,8 +15,9 @@ function Search(){
                         'AX-50', 'Fennec', 'Krig 6', 'Milano 821', 'RPD', 'Groza', 'Holger-26', 'M60', 'MG34', 'P90', 'Pellington 703', 
                         'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45']
     const [input, setInput] = useState("")
-    const history = useHistory();
     const [data, setData] = useState({})
+    const [isToggled, setIsToggled] = useState(false);
+    const history = useHistory();
     const API_KEY = process.env.REACT_APP_API_KEY
 
     const handleChange = (event) => {
@@ -76,9 +78,6 @@ function Search(){
         })
     }, [API_KEY])
 
-    // work on adding feature to get all loadouts by single streamer 
-    // in addition to current feature of get all loadouts for single gun
-
     return (
         <div>
             <div className="search-text">
@@ -92,6 +91,7 @@ function Search(){
                         get a better feel for what's best for you. Now, let's get to finding that loadout for you!</p>
                 </div>
             </div>
+            <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
             <div className="search">
                 <Container fluid className="container">
                     <Grid>
@@ -106,7 +106,12 @@ function Search(){
                                         required
                                     />
                                 </Form.Field>
-                                <Button className="search-button"color="blue" type='submit'>Get Loadouts</Button>
+                                <Button className="search-button"color="blue" type='submit' animated='fade'>
+                                    <Button.Content visible>Get Loadouts</Button.Content>
+                                        <Button.Content hidden>
+                                            <Icon name='arrow right' /> 
+                                        </Button.Content>   
+                                </Button>
                             </Form>
                         </Grid.Row>
                     </Grid>

@@ -12,7 +12,6 @@ function Home(){
                 </Link>
                 <Contact />
             </div>
-            <Search />
         </div>
     );
 }
