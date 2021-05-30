@@ -1,10 +1,8 @@
 import './App.css';
 import Home from './Home';
 import 'semantic-ui-css/semantic.min.css';
-import { Route, Switch, withRouter, useLocation, Link } from 'react-router-dom';
+import { Route, Switch, withRouter, useLocation } from 'react-router-dom';
 import Loadout from './Loadout';
-import Contact from './Contact';
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Search from './Search';
 
 function App() {

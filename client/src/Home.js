@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Contact from './Contact';
-import Search from './Search';
 
 function Home(){
     return (
