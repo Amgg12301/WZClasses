@@ -44,27 +44,76 @@ function Search(){
             isValid = true
         }
 
-        return [isValid, gun]
+        return [isValid, gun, 'gun']
+    }
+
+    const validateCreatorInput = () => {
+        var creatorList = [];
+
+        for (var i = 0; i < data.length; i++){
+            if(!creatorList.includes(data[i]["Creator"])){
+                creatorList.push(data[i]["Creator"])
+            }
+        }
+
+        console.log(creatorList)
+        var creator = ""
+        var isValid = false
+
+        for (var x = 0; x < creatorList.length; x++){
+            if(input.toLowerCase() === creatorList[x].toLowerCase()){
+                creator = creatorList[x]
+                break
+            }
+        }
+
+        if(creator.length !== 0){
+            isValid = true
+        }
+        console.log(input, creator, isValid)
+        return [isValid, creator, 'creator']
     }
 
     const goToLoadouts = (arr) => {
         if (arr[0]){
-            history.push({
-                pathname: 'loadout',
-                state: {
-                    gun: arr[1],
-                    data: data,
-                },
-            })
+            if (arr[2] === 'gun'){
+                history.push({
+                    pathname: 'loadout',
+                    state: {
+                        gun: arr[1],
+                        data: data,
+                        type: 'gun',
+                    },
+                })
+            } else {
+                history.push({
+                    pathname: 'loadout',
+                    state: {
+                        creator: arr[1],
+                        data: data,
+                        type: 'creator',
+                    },
+                })
+            }
         } else {
-            alert('Please enter a valid gun name')
+            if (arr[2] === 'gun'){
+                alert('Please enter a valid gun name')
+            }else{
+                alert('Please enter a valid creator name')
+            }
         }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        var arr = validateInput()
+        var arr;
+        
+        if (!isToggled){
+            arr = validateInput()
+        }else{
+            arr = validateCreatorInput()
+        }
 
         goToLoadouts(arr)
     }
@@ -105,7 +154,7 @@ function Search(){
                                     <Form.Field>
                                         <input
                                             type="text"
-                                            placeholder={isToggled ? "Ex. Amogh, Alex, Kevin, Chris, etc."
+                                            placeholder={isToggled ? "Ex. Andrew, Kevin, Chris, Kyle, David, Alex etc."
                                                                     : "Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."}
                                             onChange={handleChange}
                                             required

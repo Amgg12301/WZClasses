@@ -85,12 +85,12 @@ a:hover {
   height: 100%;
 }
 
-.loadout #gun-name {
+.loadout #name {
   padding-right: 240px;
 }
 
 .cards {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 25px;
   padding-bottom: 50px;
   color: black;
@@ -142,9 +142,11 @@ a:hover {
   width: 50px;
   height: 25px;
 }
+
 .toggle-switch input[type="checkbox"] {
   display: none;
 }
+
 .toggle-switch .switch {
   position: absolute;
   cursor: pointer;
@@ -156,6 +158,7 @@ a:hover {
   left: 0;
   transition: background-color 0.2s ease;
 }
+
 .toggle-switch .switch::before {
   position: absolute;
   content: "";
@@ -167,10 +170,12 @@ a:hover {
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
+
 .toggle-switch input[type="checkbox"]:checked + .switch::before {
   transform: translateX(25px);
   background-color: white;
 }
+
 .toggle-switch input[type="checkbox"]:checked + .switch {
   background-color: blue;
 }
@@ -190,4 +195,5 @@ a:hover {
   float: left;
   padding-left: 150px;
   padding-right: 20px;
+  padding-top: 2px;
 }
