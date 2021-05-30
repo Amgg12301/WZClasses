@@ -56,7 +56,6 @@ function Search(){
             }
         }
 
-        console.log(creatorList)
         var creator = ""
         var isValid = false
 
@@ -70,7 +69,6 @@ function Search(){
         if(creator.length !== 0){
             isValid = true
         }
-        console.log(input, creator, isValid)
         return [isValid, creator, 'creator']
     }
 
