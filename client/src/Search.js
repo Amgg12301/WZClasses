@@ -97,9 +97,9 @@ function Search(){
             }
         } else {
             if (arr[2] === 'gun'){
-                alert('Please enter a valid gun name')
+                alert('Please enter a valid Warzone gun name!')
             }else{
-                alert('Please enter a valid creator name')
+                alert('We currently don\'t have loadouts for this creator :(')
             }
         }
     }
@@ -137,7 +137,8 @@ function Search(){
                         by famous Warzone streamers and content creators! You can easily acquire 
                         the loadout for any gun for any type of build within a couple of seconds. 
                         Click the toggle to either get all loadouts used by a specific content
-                        creator or all loadouts for a specific gun. Now, let's get to finding that loadout for you!</p>
+                        creator or all loadouts for a specific gun.</p>
+                        <p>Now, let's get to finding that loadout for you!</p>
                 </div>
             </div>
             <div className="search">
