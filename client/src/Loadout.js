@@ -93,7 +93,7 @@ function Loadout(){
                             </Button>
                         </Link>
                     </div>
-                    {type === 'gun' ? <h2 id="name">{gun}</h2> : <h2 id="name">{creator}</h2>}
+                    {type === 'gun' ? <h2 id="name">{gun} Loadouts</h2> : <h2 id="name">{creator}'s Loadouts</h2>}
                 </div>
                 <div className="cards">
                     <Card.Group>
