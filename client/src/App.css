@@ -197,3 +197,223 @@ a:hover {
   padding-right: 20px;
   padding-top: 2px;
 }
+
+.mobile-app {
+  font-family: Verdana;
+  color: black;
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mobile-loadout {
+  text-align: center;
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.mobile-home {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.mobile-home #logo {
+  font-family: Marker Felt, fantasy;
+  font-weight: 600;
+  font-variant: small-caps;
+  font-size: 30px;
+  text-align: left;
+  padding-left: 10px;
+  float: left;
+  color: black;
+}
+
+.mobile-contact {
+  position: relative;
+  text-align: center;
+  padding-right: 15px;
+  padding-top: 0px;
+  float: right;
+}
+
+.mobile-contact #title {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+
+.intro-mobile-text {
+  font-size: 12px; 
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-variant: small-caps;
+}
+
+.search-mobile-text {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.mobile-search {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.mobile-toggle-form #toggle-button {
+  float: left;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.mobile-toggle-form #title {
+  font-size: 15px;
+  font-variant: small-caps;
+  float: right;
+}
+
+.mobile-toggle-form {
+  display: inline-flex;
+  padding-bottom: 15px;
+  padding-top: 50px;
+  position: relative;
+}
+
+.mobile-form {
+  width: 400px;
+  text-align: center;
+}
+
+.mobile-loadouts-button {
+  float: left;
+  padding-left: 100px;
+  padding-top: 25px;
+}
+
+.mobile-loadout #name {
+  padding-top: 130px;
+}
+
+.mobile-cards {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  color: black;
+}
+
+.mobile-cards #card {
+  width: 90%;
+  border-radius: 25px;
+}
+
+/* 
+@media screen and (orientation: portrait) {
+  .app {
+    font-family: Verdana;
+    color: black;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .home {
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .home #logo {
+    font-family: Marker Felt, fantasy;
+    font-weight: 600;
+    font-variant: small-caps;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 10px;
+    float: left;
+    color: black;
+  }
+  
+  .contact {
+    position: relative;
+    text-align: center;
+    padding-right: 15px;
+    padding-top: 0px;
+    float: right;
+  }
+  
+  .contact #title {
+    font-variant: small-caps;
+    font-size: 15px;
+  }
+  
+  .intro-text {
+    font-size: 13px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-variant: small-caps;
+  }
+  
+  .search-text {
+    padding-top: 120px;
+    text-align: center;
+  }
+  
+  .search {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    width: 100%;
+  }
+  
+  .toggle-form #toggle-button {
+    float: left;
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+  
+  .toggle-form #title {
+    font-size: 15px;
+    font-variant: small-caps;
+    float: right;
+  }
+  
+  .toggle-form {
+    display: inline-flex;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  
+  .form {
+    width: 400px;
+    text-align: center;
+  }
+} */
+
+@media screen and (orientation: landscape) {
+  .mobile-app {
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+  .mobile-toggle-form #toggle-button {
+    float: left;
+    padding-left: 180px;
+    padding-right: 20px;
+  }
+
+  .mobile-loadouts-button {
+    float: left;
+    padding-left: 110px;
+    padding-top: 60px;
+  }
+
+  .mobile-loadout #name {
+    padding-top: 120px;
+  }
+}
