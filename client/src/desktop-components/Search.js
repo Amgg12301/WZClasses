@@ -33,6 +33,7 @@ function Search(){
 
         for(var i = 0; i < gunsList.length; i++){
             var similarity = stringSimilarity.compareTwoStrings(input, gunsList[i].toLowerCase())
+            console.log(similarity, input, gunsList[i])
 
             if (similarity > max_similarity){
                 max_similarity = similarity
@@ -41,7 +42,7 @@ function Search(){
 
         }
 
-        if (max_similarity > 0.30 && gun.length > 0){
+        if (max_similarity >= 0.40 && gun.length > 0){
             isValid = true
         }
 
@@ -96,7 +97,11 @@ function Search(){
             }
         } else {
             if (arr[2] === 'gun'){
-                alert('Please enter a valid Warzone gun name!')
+                if (arr[1].length === 0){
+                    alert(`Please enter a valid Warzone gun name!`)
+                } else {
+                    alert(`Please enter a valid Warzone gun name!\nDid you possibly mean the ${arr[1]}?`)
+                }
             }else{
                 alert('We currently don\'t have loadouts for this creator :(')
             }

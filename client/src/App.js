@@ -1,6 +1,6 @@
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import { BrowserView, MobileView, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { Route, Switch, withRouter, useLocation } from 'react-router-dom';
 import Home from './desktop-components/Home';
 import Loadout from './desktop-components/Loadout';
