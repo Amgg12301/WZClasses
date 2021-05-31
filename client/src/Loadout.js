@@ -48,6 +48,8 @@ function Loadout(){
             }
         }
 
+        list = list.sort(() => Math.random() - 0.5)
+
         return list
     }
 
@@ -75,6 +77,8 @@ function Loadout(){
                         </Card>)
             }
         }
+
+        list = list.sort(() => Math.random() - 0.5)
 
         return list
     }
