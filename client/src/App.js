@@ -1,10 +1,10 @@
 import './App.css';
-import Home from './Home';
 import 'semantic-ui-css/semantic.min.css';
-import { Route, Switch, withRouter, useLocation } from 'react-router-dom';
-import Loadout from './Loadout';
-import Search from './Search';
 import { BrowserView, MobileView, isMobile } from 'react-device-detect';
+import { Route, Switch, withRouter, useLocation } from 'react-router-dom';
+import Home from './desktop-components/Home';
+import Loadout from './desktop-components/Loadout';
+import Search from './desktop-components/Search';
 import MobileHome from './mobile-components/MobileHome';
 import MobileSearch from './mobile-components/MobileSearch';
 import MobileLoadout from './mobile-components/MobileLoadout';

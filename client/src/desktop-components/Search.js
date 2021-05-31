@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, Container, Grid, Icon } from 'semantic-ui-react';
 import Tabletop from "tabletop";
-import Toggle from './Toggle';
 import { isMobile } from 'react-device-detect';
+import Toggle from '../Toggle';
 
 function Search(){
 
