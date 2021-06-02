@@ -160,13 +160,15 @@ function Search(){
                 </div>
             </div>
             <div className="search">
-                <div className="toggle-form">
-                    <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
-                    {isToggled ? <p id="title">Find Loadouts for Creator</p>
-                                                : <p id="title">Find Loadouts for Gun</p>}
-                </div>
                 <Container fluid className="container">
                     <Grid>
+                        <Grid.Row centered>
+                            <div className="toggle-form">
+                                <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
+                                {isToggled ? <p id="title">Find Loadouts for Creator</p>
+                                                            : <p id="title">Find Loadouts for Gun</p>}
+                            </div>
+                        </Grid.Row>
                         <Grid.Row centered>
                             <Form className="form" onSubmit={handleSubmit}>
                                 <div className="form-field-div">

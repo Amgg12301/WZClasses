@@ -72,8 +72,22 @@ a:hover {
   padding-top: 25px;
 }
 
-.form-field-div {
-  padding-top: 10px;
+.intro-text {
+  font-size: 22px;
+  float: left;
+  width: 50%;
+  padding-left: 40px;
+  padding-right: 0px;
+  font-variant: small-caps;
+}
+
+.search {
+  width: 50%;
+  float: right;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  position: static;
 }
 
 .loadout {
@@ -106,34 +120,9 @@ a:hover {
   font-size: medium;
 }
 
-.intro-text {
-  font-size: 22px;
-  float: left;
-  width: 50%;
-  padding-left: 40px;
-  padding-right: 0px;
-  font-variant: small-caps;
-}
-
-.search {
-  width: 50%;
-  float: right;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 70px;
-}
-
-.message-button {
-  padding-top: 15px;
-}
-
 .loadouts-button {
   float: left;
   padding-left: 60px;
-}
-
-.toggle {
-  text-align: center;
 }
 
 .toggle-switch {
@@ -182,7 +171,6 @@ a:hover {
 
 .toggle-form {
   display: inline-flex;
-  padding-bottom: 20px;
 }
 
 .toggle-form #title {
@@ -193,7 +181,7 @@ a:hover {
 
 .toggle-form #toggle-button {
   float: left;
-  padding-left: 150px;
+  padding-left: 0px;
   padding-right: 20px;
   padding-top: 2px;
 }
@@ -262,7 +250,6 @@ a:hover {
 
   .toggle-form #toggle-button {
     float: left;
-    padding-left: 10px;
     padding-right: 20px;
   }
 
@@ -275,7 +262,7 @@ a:hover {
 
   .toggle-form {
     display: inline-flex;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     padding-top: 50px;
     position: relative;
   }
@@ -318,10 +305,10 @@ a:hover {
     height: 100%;
     padding-bottom: 50px;
   }
-  .toggle-form #toggle-button {
-    float: left;
-    padding-left: 180px;
-    padding-right: 20px;
+
+  .intro-text {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .loadouts-button {
@@ -337,11 +324,6 @@ a:hover {
     padding-right: 15px;
     padding-bottom: 15px;
     width: 100%;
-  }
-
-  .intro-text {
-    padding-left: 100px;
-    padding-right: 100px;
   }
 
   .cards {
