@@ -198,6 +198,20 @@ a:hover {
   padding-top: 2px;
 }
 
+@media screen and (max-width: 1200px) {
+  .cards #card {
+    width: 45%;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .cards #card {
+    width: 90%;
+    border-radius: 25px;
+  }
+}
+
 @media screen and (pointer: coarse) and (hover: none){
   .home #logo {
     font-family: Marker Felt, fantasy;
@@ -254,6 +268,7 @@ a:hover {
 
   .toggle-form #title {
     font-size: 15px;
+    padding-top: 5px;
     font-variant: small-caps;
     float: right;
   }
@@ -289,7 +304,6 @@ a:hover {
     padding-bottom: 50px;
     color: black;
   }
-
   .cards #card {
     width: 90%;
     border-radius: 25px;
