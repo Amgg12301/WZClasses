@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button, Icon } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 
 function Loadout(){
     
@@ -89,12 +90,21 @@ function Loadout(){
                 <div className="title">
                     <div className="loadouts-button">
                         <Link to="/">
-                            <Button color="red" animated='fade'>
-                                <Button.Content visible>Find More Loadouts</Button.Content>
+                            {isMobile ? 
+                            <div>
+                                <Button color="red">
+                                    <Button.Content visible>Find More Loadouts</Button.Content>
+                                </Button>
+                            </div> 
+                            : 
+                            <div>
+                                <Button color="red" animated='fade'>
+                                    <Button.Content visible>Find More Loadouts</Button.Content>
                                     <Button.Content hidden>
                                         <Icon name='arrow left' />
                                     </Button.Content>
-                            </Button>
+                                </Button>
+                            </div>}
                         </Link>
                     </div>
                     {type === 'gun' ? <h2 id="name">{gun} Loadouts</h2> : <h2 id="name">{creator}'s Loadouts</h2>}

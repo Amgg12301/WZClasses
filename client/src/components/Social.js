@@ -1,7 +1,7 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 
-function MobileSocial(){
+function Social(){
     return (
         <div className="socials">
             <SocialIcon url="mailto:codloadouts21@gmail.com" bgColor="red" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
@@ -11,4 +11,4 @@ function MobileSocial(){
     )
 }
 
-export default MobileSocial;
+export default Social;

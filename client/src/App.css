@@ -39,7 +39,7 @@ a:hover {
   font-variant: small-caps;
   font-size: 35px;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 15px;
   float: left;
   color: black;
 }
@@ -108,8 +108,8 @@ a:hover {
 
 .intro-text {
   font-size: 22px;
-  width: 50%;
   float: left;
+  width: 50%;
   padding-left: 40px;
   padding-right: 0px;
   font-variant: small-caps;
@@ -198,138 +198,147 @@ a:hover {
   padding-top: 2px;
 }
 
-.mobile-app {
-  font-family: Verdana;
-  color: black;
-  background-image: url('./background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+@media screen and (pointer: coarse) and (hover: none){
+  .home #logo {
+    font-family: Marker Felt, fantasy;
+    font-weight: 600;
+    font-variant: small-caps;
+    font-size: 30px;
+    padding-left: 15px;
+    float: left;
+    color: black;
+  }
+
+  .home #logo:hover {
+    transform: none;
+  }
+
+  a:hover {
+    transform: none;
+  }
+
+  .contact {
+    position: relative;
+    text-align: center;
+    padding-right: 15px;
+    padding-top: 0px;
+    float: right;
+  }
+
+  .intro-text {
+    font-size: 13px; 
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-variant: small-caps;
+  }
+
+  .search-text {
+    padding-top: 120px;
+    text-align: center;
+  }
+
+  .search {
+    padding-left: 50px;
+    padding-right: 50px;
+    float: none;
+    width: 100%;
+  }
+
+  .toggle-form #toggle-button {
+    float: left;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+
+  .toggle-form #title {
+    font-size: 15px;
+    font-variant: small-caps;
+    float: right;
+  }
+
+  .toggle-form {
+    display: inline-flex;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    position: relative;
+  }
+
+  .loadout {
+    padding-top: 60px;
+  }
+
+  .loadouts-button {
+    padding-left: 105px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .loadout #name {
+    padding-top: 70px;
+    padding-left: 10px;
+    width: 600px;
+    text-align: center;
+  }
+
+  .cards {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+    color: black;
+  }
+
+  .cards #card {
+    width: 90%;
+    border-radius: 25px;
+  }
 }
 
-.mobile-loadout {
-  text-align: center;
-  background-image: url('./background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
-
-.mobile-home {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.mobile-home #logo {
-  font-family: Marker Felt, fantasy;
-  font-weight: 600;
-  font-variant: small-caps;
-  font-size: 30px;
-  text-align: left;
-  padding-left: 10px;
-  float: left;
-  color: black;
-}
-
-.mobile-contact {
-  position: relative;
-  text-align: center;
-  padding-right: 15px;
-  padding-top: 0px;
-  float: right;
-}
-
-.mobile-contact #title {
-  font-variant: small-caps;
-  font-size: 15px;
-}
-
-.intro-mobile-text {
-  font-size: 12px; 
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-variant: small-caps;
-}
-
-.search-mobile-text {
-  padding-top: 120px;
-  text-align: center;
-}
-
-.mobile-search {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.mobile-toggle-form #toggle-button {
-  float: left;
-  padding-left: 10px;
-  padding-right: 20px;
-}
-
-.mobile-toggle-form #title {
-  font-size: 15px;
-  font-variant: small-caps;
-  float: right;
-}
-
-.mobile-toggle-form {
-  display: inline-flex;
-  padding-bottom: 15px;
-  padding-top: 50px;
-  position: relative;
-}
-
-.mobile-form {
-  width: 400px;
-  text-align: center;
-}
-
-.mobile-loadouts-button {
-  float: left;
-  padding-left: 100px;
-  padding-top: 25px;
-}
-
-.mobile-loadout #name {
-  padding-top: 130px;
-}
-
-.mobile-cards {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 20px;
-  padding-bottom: 50px;
-  color: black;
-}
-
-.mobile-cards #card {
-  width: 90%;
-  border-radius: 25px;
-}
-
-@media screen and (orientation: landscape) {
-  .mobile-app {
+@media screen and (pointer: coarse) and (hover: none) and (orientation: landscape) {
+  .app {
     background-image: url('./background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
-  .mobile-toggle-form #toggle-button {
+  .toggle-form #toggle-button {
     float: left;
     padding-left: 180px;
     padding-right: 20px;
   }
 
-  .mobile-loadouts-button {
-    float: left;
-    padding-left: 110px;
-    padding-top: 60px;
+  .loadouts-button {
+    float: inherit;
+    padding-top: 20px;
+    padding-right: 105px;
+    padding-bottom: 0px;
   }
 
-  .mobile-loadout #name {
-    padding-top: 120px;
+  .loadout #name {
+    float: inherit;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+  }
+
+  .intro-text {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .cards {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+  }
+
+  .cards #card {
+    width: 45%;
+    border-radius: 25px;
   }
 }

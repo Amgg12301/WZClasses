@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Form, Container, Grid } from 'semantic-ui-react';
+import { Button, Form, Container, Grid, Icon } from 'semantic-ui-react';
 import Tabletop from "tabletop";
-import Toggle from '../Toggle';
+import { isMobile } from 'react-device-detect';
+import Toggle from './Toggle';
 
-function MobileSearch(){
+function Search(){
 
     var stringSimilarity = require('string-similarity')
     const gunsList = ['M13', 'M4A1', 'FR 5.56', 'MW AK-47', 'FAL', 'FN Scar 17', 'Oden', 'Kilo 141', 'RAM-7', 'Grau 5.56', 
@@ -32,6 +33,7 @@ function MobileSearch(){
 
         for(var i = 0; i < gunsList.length; i++){
             var similarity = stringSimilarity.compareTwoStrings(input, gunsList[i].toLowerCase())
+            console.log(similarity, input, gunsList[i])
 
             if (similarity > max_similarity){
                 max_similarity = similarity
@@ -40,7 +42,7 @@ function MobileSearch(){
 
         }
 
-        if (max_similarity > 0.30 && gun.length > 0){
+        if (max_similarity >= 0.40 && gun.length > 0){
             isValid = true
         }
 
@@ -76,7 +78,7 @@ function MobileSearch(){
         if (arr[0]){
             if (arr[2] === 'gun'){
                 history.push({
-                    pathname: 'loadout',
+                    pathname: '/loadout',
                     state: {
                         gun: arr[1],
                         data: data,
@@ -85,7 +87,7 @@ function MobileSearch(){
                 })
             } else {
                 history.push({
-                    pathname: 'loadout',
+                    pathname: '/loadout',
                     state: {
                         creator: arr[1],
                         data: data,
@@ -95,7 +97,11 @@ function MobileSearch(){
             }
         } else {
             if (arr[2] === 'gun'){
-                alert('Please enter a valid Warzone gun name!')
+                if (arr[1].length === 0){
+                    alert('Please enter a valid Warzone gun name!')
+                } else {
+                    alert(`Please enter a valid Warzone gun name!\nDid you possibly mean the ${arr[1]}?`)
+                }
             }else{
                 alert('We currently don\'t have loadouts for this creator :(')
             }
@@ -127,19 +133,34 @@ function MobileSearch(){
 
     return (
         <div>
-            <div className="search-mobile-text">
-                <div className="intro-mobile-text">
-                    <p>Tired looking for the best loadout when the meta changes?</p>
-                    <p>Don't know what to use with so many content creators?</p>
-                    <p>This is your one-stop shop to find the best loadouts for every gun created 
-                        by famous Warzone streamers and content creators! Click the toggle to either 
-                        get all loadouts used by a specific content
-                        creator or all loadouts for a specific gun.</p>
-                    <p>Now, let's get to finding that loadout for you!</p>
+            <div className="search-text">
+                <div className="intro-text">
+
+                    {isMobile ? <div>
+                                    <p>Tired looking for the best loadout when the meta changes?</p>
+                                    <p>Don't know what to use with so many content creators?</p>
+                                    <p>This is your one-stop shop to find the best loadouts for every gun created 
+                                        by famous Warzone streamers and content creators! Click the toggle to either 
+                                        get all loadouts used by a content creator or all loadouts for a 
+                                        specific gun.</p>
+                                    <p>Now, let's get to finding that loadout for you!</p>
+                                </div>
+                                : 
+                                <div>
+                                    <p>Tired of looking for the best loadout everytime the meta changes?</p>
+                                    <p>Don't know what to use with so many content creators out there?</p>
+                                    <p>This is your one-stop shop to find the best loadouts for every gun created 
+                                        by famous Warzone streamers and content creators! You can easily acquire 
+                                        the loadout for any gun for any type of build within a couple of seconds. 
+                                        Click the toggle to either get all loadouts used by a specific content
+                                        creator or all loadouts for a specific gun.</p>
+                                    <p>Now, let's get to finding that loadout for you!</p>
+                                </div>
+                                }
                 </div>
             </div>
-            <div className="mobile-search">
-                <div className="mobile-toggle-form">
+            <div className="search">
+                <div className="toggle-form">
                     <Toggle isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
                     {isToggled ? <p id="title">Find Loadouts for Creator</p>
                                                 : <p id="title">Find Loadouts for Gun</p>}
@@ -147,22 +168,34 @@ function MobileSearch(){
                 <Container fluid className="container">
                     <Grid>
                         <Grid.Row centered>
-                            <Form className="mobile-form" onSubmit={handleSubmit}>
+                            <Form className="form" onSubmit={handleSubmit}>
                                 <div className="form-field-div">
                                     <Form.Field>
                                         <input
                                             type="text"
-                                            placeholder={isToggled ? "Ex. Andrew, Kevin, Chris, Kyle, Alex etc."
-                                                                    : "Ex. CR-56 AMAX, CW AK-47, M4A1 etc."}
+                                            placeholder={isToggled ? "Ex. Andrew, Kevin, Chris, Kyle, David, Alex etc."
+                                                                    : "Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."}
                                             onChange={handleChange}
                                             required
                                         />
                                     </Form.Field>
                                 </div>
                                 <div className="search-button-div">
-                                    <Button className="search-button"color="blue" type='submit'>
-                                        <Button.Content visible>Get Loadouts</Button.Content> 
-                                    </Button>
+                                    {isMobile ? 
+                                    <div>
+                                        <Button className="search-button"color="blue" type='submit'>
+                                            <Button.Content visible>Get Loadouts</Button.Content>
+                                        </Button>
+                                    </div> 
+                                    : 
+                                    <div>
+                                        <Button className="search-button"color="blue" type='submit' animated='fade'>
+                                            <Button.Content visible>Get Loadouts</Button.Content>
+                                            <Button.Content hidden>
+                                                <Icon name='arrow right' /> 
+                                            </Button.Content>   
+                                        </Button>
+                                    </div>}
                                 </div>
                             </Form>
                         </Grid.Row>
@@ -173,4 +206,4 @@ function MobileSearch(){
     )
 }
 
-export default MobileSearch;
+export default Search;
