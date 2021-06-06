@@ -9,13 +9,14 @@ import Toggle from './Toggle';
 function Search(){
 
     var stringSimilarity = require('string-similarity')
-    const gunsList = ['M13', 'M4A1', 'FR 5.56', 'MW AK-47', 'FAL', 'FN Scar 17', 'Oden', 'Kilo 141', 'RAM-7', 'Grau 5.56', 
-                        'CR-56 AMAX', 'AN-94', 'AS VAL', 'FARA 83', 'CW AUG', 'FFAR 1', 'Kar98k', 'LW3 - Tundra', 'PKM', 'MAC-10',
-                        'MW AUG', 'CW AK-47', 'Bruen Mk9', 'Bullfrog', 'DMR 14', 'HDR', 'LC10', 'M16', 'CW MP5', 'MW MP5', 'MP7', 
-                        'Oden', 'SP-R 208', 'Stoner 63', 'Uzi', 'AK-74u', 'Crossbow', 'FiNN', 'M91', 'PP19 Bizon', 'Type 63', 'XM4', 
-                        'AX-50', 'Fennec', 'Krig 6', 'Milano 821', 'RPD', 'Groza', 'Holger-26', 'M60', 'MG34', 'P90', 'Pellington 703', 
-                        'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45', 
-                        'PPSh-41', 'Gallo SA12']
+    const gunsList = ['FAL', 'FN Scar 17', 'M4A1', 'XM4', 'Ram-7', 'FFAR 1', 'QBZ-83', 'Groza', 'M13', 'Oden', 'Kilo 141',
+                        'CW AK-47', 'AN-94', 'AS VAL', 'CR-56 AMAX', 'Krig 6', 'P90', 'Milano 821', 'MW AUG', 'Bullfrog', 
+                        'ISO', 'PP19 Bizon', 'MW MP5', 'KSP-45', 'AK-74u', 'Fennec', 'MAC-10', 'Uzi', 'CW MP5', 'LC10', 'MP7', 
+                        'PPSh-41', 'Streetsweeper', 'Gallo SA12', 'R9-0', 'Origin 12', 'JAK-12', 'Hauer 77', 'Model 680', 
+                        'Model 680', 'VLK Rogue', '725', 'PKM', 'Holger-26', 'RPD', 'FiNN', 'MG34', 'M91', 'SA87',
+                        'Stoner 63', 'Bruen Mk9', 'M60', 'CW AUG', 'M16', 'DMR 14', 'Type 63', 'CARV.2', 'R1 Shadowhunter', 
+                        'SKS', 'Crossbow', 'MK2 Carbine', 'EBR-14', 'Kar98k', 'SP-R 208', 'LW3-Tundra', 'Pelington 703', 
+                        'ZRG 20MM', 'M82', 'AX-50', 'HDR', 'Rytec AMR', 'Dragunov']
     const [input, setInput] = useState("")
     const [data, setData] = useState({})
     const [isToggled, setIsToggled] = useState(false);

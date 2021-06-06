@@ -93,7 +93,7 @@ function Loadout(){
             }
         }
 
-        // list = list.sort(() => Math.random() - 0.5)
+        list = list.sort(() => Math.random() - 0.5)
 
         return list
     }
