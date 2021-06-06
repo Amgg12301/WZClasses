@@ -217,7 +217,7 @@ a:hover {
     width: 45%;
     border-radius: 25px;
   }
-  
+
   .intro-text {
     font-size: 20px; 
     float: left;
@@ -237,10 +237,22 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 750px) {
-  .cards #card {
-    width: 90%;
-    border-radius: 25px;
+@media screen and (max-width: 1000px) {
+  .cards {
+    padding-left: 35px;
+    padding-right: 25px;
+  }
+
+  .loadouts-button {
+    float: none;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .loadout #name {
+    float: none;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
