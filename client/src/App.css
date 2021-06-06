@@ -104,18 +104,19 @@ a:hover {
 }
 
 .loadout #name {
-  padding-right: 240px;
+  padding-right: 435px;
 }
 
 .cards {
   padding-top: 20px;
-  padding-left: 25px;
+  padding-left: 125px;
+  padding-right: 100px;
   padding-bottom: 50px;
   color: black;
 }
 
 .cards #card {
-  width: 23%;
+  width: 30%;
   border-radius: 25px;
 }
 
@@ -126,7 +127,7 @@ a:hover {
 
 .loadouts-button {
   float: left;
-  padding-left: 60px;
+  padding-left: 260px;
 }
 
 .toggle-switch {
@@ -197,13 +198,26 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
-  .cards #card {
-    width: 45%;
-    border-radius: 25px;
+  .cards {
+    padding-left: 75px;
+    padding-right: 50px;
+  }
+
+  .loadouts-button {
+    padding-left: 160px;
+  }
+
+  .loadout #name {
+    padding-right: 320px;
   }
 }
 
 @media screen and (max-width: 1100px) {
+  .cards #card {
+    width: 45%;
+    border-radius: 25px;
+  }
+  
   .intro-text {
     font-size: 20px; 
     float: left;

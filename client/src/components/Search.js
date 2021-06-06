@@ -164,7 +164,7 @@ function Search(){
                                     <Form.Field>
                                         <input
                                             type="text"
-                                            placeholder={isToggled ? "Ex. Andrew, Kevin, Chris, Kyle, David, Alex etc."
+                                            placeholder={isToggled ? "Ex. Aydan, Symfuhny, Huskerrs, JoeWo, etc."
                                                                     : "Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."}
                                             onChange={handleChange}
                                             required
