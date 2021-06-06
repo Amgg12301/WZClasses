@@ -14,7 +14,8 @@ function Search(){
                         'MW AUG', 'CW AK-47', 'Bruen Mk9', 'Bullfrog', 'DMR 14', 'HDR', 'LC10', 'M16', 'CW MP5', 'MW MP5', 'MP7', 
                         'Oden', 'SP-R 208', 'Stoner 63', 'Uzi', 'AK-74u', 'Crossbow', 'FiNN', 'M91', 'PP19 Bizon', 'Type 63', 'XM4', 
                         'AX-50', 'Fennec', 'Krig 6', 'Milano 821', 'RPD', 'Groza', 'Holger-26', 'M60', 'MG34', 'P90', 'Pellington 703', 
-                        'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45']
+                        'QBZ-83', 'SKS', 'Dragunov', 'EBR-14', 'ISO', 'KSP-45', 'M82', 'MK2 Carbine', 'Rytec AMR', 'SA87', 'Striker 45', 
+                        'PPSh-41', 'Gallo SA12']
     const [input, setInput] = useState("")
     const [data, setData] = useState({})
     const [isToggled, setIsToggled] = useState(false);
@@ -135,28 +136,15 @@ function Search(){
         <div>
             <div className="search-text">
                 <div className="intro-text">
-
-                    {isMobile ? <div>
-                                    <p>Tired looking for the best loadout when the meta changes?</p>
-                                    <p>Don't know what to use with so many content creators?</p>
-                                    <p>This is your one-stop shop to find the best loadouts for every gun created 
-                                        by famous Warzone streamers and content creators! Click the toggle to either 
-                                        get all loadouts used by a content creator or all loadouts for a 
-                                        specific gun.</p>
-                                    <p>Now, let's get to finding that loadout for you!</p>
-                                </div>
-                                : 
-                                <div>
-                                    <p>Tired of looking for the best loadout everytime the meta changes?</p>
-                                    <p>Don't know what to use with so many content creators out there?</p>
-                                    <p>This is your one-stop shop to find the best loadouts for every gun created 
-                                        by famous Warzone streamers and content creators! You can easily acquire 
-                                        the loadout for any gun for any type of build within a couple of seconds. 
-                                        Click the toggle to either get all loadouts used by a specific content
-                                        creator or all loadouts for a specific gun.</p>
-                                    <p>Now, let's get to finding that loadout for you!</p>
-                                </div>
-                                }
+                    <div>
+                        <p>Tired looking for the best loadout when the meta changes?</p>
+                        <p>Don't know what to use with so many content creators?</p>
+                        <p>This is your one-stop shop to find the best loadouts for every gun created 
+                            by famous Warzone streamers and content creators!</p>
+                        <p>Click the toggle to either 
+                            get all loadouts used by a content creator or all loadouts for a 
+                            specific gun.</p>
+                    </div>
                 </div>
             </div>
             <div className="search">

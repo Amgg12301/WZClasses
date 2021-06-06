@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button, Icon } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
+import { SocialIcon } from 'react-social-icons';
 
 function Loadout(){
     
@@ -24,6 +25,31 @@ function Loadout(){
         creator = location.state.creator
     }
 
+    const showDataBelowTitle = () => {
+        if(type === 'gun'){
+            for(var i = 0; i < data.length; i++){
+                if (data[i]["Gun"].toLowerCase() === gun.toLowerCase()) {
+                    meta = <p>{data[i]["Description"]}</p>
+                    return meta
+                }
+            }
+        } else {
+            for (i = 0; i < data.length; i++){
+                if(data[i]["Creator"] === creator){
+                    socials =  
+                        <div>
+                            <SocialIcon url={data[i]["Twitch"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Youtube"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Twitter"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Instagram"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Tiktok"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                        </div>
+                    return socials
+                }
+            }
+        }
+    }
+
     const modifyData = () => {
         for(var i = 0; i < data.length; i++){
             if (data[i]["Gun"].toLowerCase() === gun.toLowerCase()) {
@@ -33,18 +59,11 @@ function Loadout(){
                                     {data[i]["Laser"]}<br></br><b>Ammunition: </b>{data[i]["Ammunition"]}<br></br>
                                     <b>Optic: </b>{data[i]["Optic"]}<br></br><b>Rear Grip: </b>{data[i]["Rear Grip"]}
                                     <br></br><b>Stock: </b>{data[i]["Stock"]}<br></br><b>Perk: </b>{data[i]["Perk"]}</p>
-                meta = <p>{data[i]["Description"]}</p>
-                socials = <p><b>Twitch: </b>{data[i]["Twitch"]}<br></br><b>Youtube:</b> {data[i]["Youtube"]}<br></br><b>Twitter:</b> {data[i]["Twitter"]}
-                            <br></br><b>Instagram:</b> {data[i]["Instagram"]}</p>
                             
                 list.push(
                         <Card id="card">
                             <Card.Content header = {creatorName} />
-                            <Card.Content meta = {meta} />
                             <Card.Content description = {description} />
-                            <Card.Content extra>
-                                {socials}
-                            </Card.Content>
                         </Card>)
             }
         }
@@ -64,22 +83,17 @@ function Loadout(){
                                     <b>Optic: </b>{data[i]["Optic"]}<br></br><b>Rear Grip: </b>{data[i]["Rear Grip"]}
                                     <br></br><b>Stock: </b>{data[i]["Stock"]}<br></br><b>Perk: </b>{data[i]["Perk"]}</p>
                 meta = <p>{data[i]["Description"]}</p>
-                socials = <p><b>Twitch: </b>{data[i]["Twitch"]}<br></br><b>Youtube:</b> {data[i]["Youtube"]}<br></br><b>Twitter:</b> {data[i]["Twitter"]}
-                            <br></br><b>Instagram:</b> {data[i]["Instagram"]}</p>
                             
                 list.push(
                         <Card id="card">
                             <Card.Content header = {gunName} />
                             <Card.Content meta = {meta} />
                             <Card.Content description = {description} />
-                            <Card.Content extra>
-                                {socials}
-                            </Card.Content>
                         </Card>)
             }
         }
 
-        list = list.sort(() => Math.random() - 0.5)
+        // list = list.sort(() => Math.random() - 0.5)
 
         return list
     }
@@ -108,6 +122,9 @@ function Loadout(){
                         </Link>
                     </div>
                     {type === 'gun' ? <h2 id="name">{gun} Loadouts</h2> : <h2 id="name">{creator}'s Loadouts</h2>}
+                </div>
+                <div className="below-title">
+                    {showDataBelowTitle()}
                 </div>
                 <div className="cards">
                     <Card.Group>
