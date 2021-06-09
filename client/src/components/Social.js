@@ -4,9 +4,9 @@ import { SocialIcon } from 'react-social-icons';
 function Social(){
     return (
         <div className="socials">
-            <SocialIcon url="mailto:codloadouts21@gmail.com" bgColor="red" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-            <SocialIcon url="https://twitter.com/COD_Loadouts" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-            <SocialIcon url="https://discord.gg/tAwB65tzf4" bgColor="#6600ff" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+            <SocialIcon url="mailto:wzclasses21@gmail.com" target='_blank'  bgColor="red" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+            <SocialIcon url="https://twitter.com/WZClasses" target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+            <SocialIcon url="https://www.buymeacoffee.com/wzclasses" target='_blank' bgColor="#6600ff" style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
         </div>
     )
 }

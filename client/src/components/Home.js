@@ -7,7 +7,7 @@ function Home(){
         <div>
             <div className="home">
                 <Link to="/">
-                    <p id="logo">CODLoadouts</p>
+                    <p id="logo">WZClasses</p>
                 </Link>
                 <Contact />
             </div>
