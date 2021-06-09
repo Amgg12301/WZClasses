@@ -138,13 +138,9 @@ function Search(){
             <div className="search-text">
                 <div className="intro-text">
                     <div>
-                        <p>Tired looking for the best loadout when the meta changes?</p>
-                        <p>Don't know what to use with so many content creators?</p>
-                        <p>This is your one-stop shop to find the best loadouts for every gun created 
-                            by famous Warzone streamers and content creators!</p>
-                        <p>Click the toggle to either 
-                            get all loadouts used by a content creator or all loadouts for a 
-                            specific gun.</p>
+                        <p>Loadouts for every gun in Warzone!</p>
+                        <p>...From Aydan, Symfuhny, JoeWo, Huskerrs, 
+                            SuperEvan, Nickmercs, Cloakzy, TeePee, and Crowder</p>
                     </div>
                 </div>
             </div>

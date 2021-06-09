@@ -3,7 +3,7 @@ html {
 }
 
 .app {
-  font-family: Verdana;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   color: black;
   background-image: url('./background.jpg');
   background-repeat: no-repeat;
@@ -53,12 +53,6 @@ a:hover {
   text-align: center;
 }
 
-.search-title {
-  font-size: 15px;
-  text-align: center;
-  font-variant: small-caps;
-}
-
 .form {
   width: 350px;
   text-align: center;
@@ -73,13 +67,12 @@ a:hover {
 }
 
 .intro-text {
-  font-size: 22px;
+  font-size: 35px;
   float: left;
   width: 50%;
   padding-left: 40px;
-  padding-top: 20px;
   padding-right: 0px;
-  font-variant: small-caps;
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 .search {
@@ -219,11 +212,10 @@ a:hover {
   }
 
   .intro-text {
-    font-size: 20px; 
     float: left;
     width: 100%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
     font-variant: small-caps;
   }
 
@@ -239,14 +231,14 @@ a:hover {
 
 @media screen and (max-width: 1000px) {
   .cards {
-    padding-left: 35px;
-    padding-right: 25px;
+    padding-left: 45px;
+    padding-right: 20px;
   }
 
   .loadouts-button {
     float: none;
     padding-left: 0px;
-    padding-right: 160px;
+    padding-right: 0px;
   }
 
   .loadout #name {
