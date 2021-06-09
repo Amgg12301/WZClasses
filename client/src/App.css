@@ -95,6 +95,7 @@ a:hover {
 
 .loadout #name {
   padding-right: 435px;
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 .cards {
@@ -236,7 +237,7 @@ a:hover {
     padding-left: 0px;
     padding-right: 0px;
   }
-  
+
   .intro-text {
     padding-left: 50px;
     padding-right: 50px;
