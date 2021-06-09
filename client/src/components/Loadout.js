@@ -38,11 +38,11 @@ function Loadout(){
                 if(data[i]["Creator"] === creator){
                     socials =  
                         <div>
-                            <SocialIcon url={data[i]["Twitch"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-                            <SocialIcon url={data[i]["Youtube"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-                            <SocialIcon url={data[i]["Twitter"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-                            <SocialIcon url={data[i]["Instagram"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
-                            <SocialIcon url={data[i]["Tiktok"]} style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Twitch"]} target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Youtube"]} target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Twitter"]} target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Instagram"]} target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
+                            <SocialIcon url={data[i]["Tiktok"]} target='_blank' style={{ height: 30, width: 30, margin: "0px 5px 5px 5px" }}/>
                         </div>
                     return socials
                 }

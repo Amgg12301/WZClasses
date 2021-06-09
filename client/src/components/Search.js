@@ -138,7 +138,7 @@ function Search(){
             <div className="search-text">
                 <div className="intro-text">
                     <div>
-                        <p>Loadouts for every gun in Warzone!</p>
+                        <p>Loadouts for every Gun in Warzone!</p>
                         <p>...From Aydan, Symfuhny, JoeWo, Huskerrs, 
                             SuperEvan, Nickmercs, Cloakzy, TeePee, and Crowder</p>
                     </div>
