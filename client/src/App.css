@@ -3,7 +3,7 @@ html {
 }
 
 .app {
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: Comic Sans MS, Comic Sans;
   color: black;
   background-image: url('./background.jpg');
   background-repeat: no-repeat;
@@ -95,7 +95,7 @@ a:hover {
 
 .loadout #name {
   padding-right: 435px;
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: Comic Sans MS, Comic Sans;
 }
 
 .cards {
@@ -274,6 +274,7 @@ a:hover {
   .intro-text {
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 23px;
   }
 
   .search-text {
@@ -294,8 +295,8 @@ a:hover {
   }
 
   .toggle-form #title {
-    font-size: 15px;
-    padding-top: 5px;
+    font-size: 18px;
+    padding-top: 2px;
     font-variant: small-caps;
     float: right;
   }
@@ -303,30 +304,35 @@ a:hover {
   .toggle-form {
     display: inline-flex;
     padding-bottom: 0px;
-    padding-top: 50px;
+    padding-top: 0px;
     position: relative;
   }
 
   .loadout {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .loadouts-button {
-    padding-left: 105px;
-    padding-bottom: 10px;
+    padding-left: 95px;
+    padding-right: 95px;
     padding-top: 10px;
   }
 
   .loadout #name {
-    padding-top: 70px;
-    padding-left: 10px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 230px;
     width: 600px;
     text-align: center;
   }
 
+  .below-title {
+    padding-top: 20px;
+  }
+
   .cards {
     padding-top: 10px;
-    padding-left: 20px;
+    padding-left: 15px;
     padding-right: 10px;
     padding-bottom: 50px;
     color: black;
