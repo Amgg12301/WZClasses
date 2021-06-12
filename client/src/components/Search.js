@@ -9,14 +9,15 @@ import Toggle from './Toggle';
 function Search(){
 
     var stringSimilarity = require('string-similarity')
-    const gunsList = ['FAL', 'FN Scar 17', 'M4A1', 'XM4', 'Ram-7', 'FFAR 1', 'QBZ-83', 'Groza', 'M13', 'Oden', 'Kilo 141',
-                        'CW AK-47', 'AN-94', 'AS VAL', 'CR-56 AMAX', 'Krig 6', 'P90', 'Milano 821', 'MW AUG', 'Bullfrog', 
-                        'ISO', 'PP19 Bizon', 'MW MP5', 'KSP-45', 'AK-74u', 'Fennec', 'MAC-10', 'Uzi', 'CW MP5', 'LC10', 'MP7', 
-                        'PPSh-41', 'Streetsweeper', 'Gallo SA12', 'R9-0', 'Origin 12', 'JAK-12', 'Hauer 77', 'Model 680', 
-                        'Model 680', 'VLK Rogue', '725', 'PKM', 'Holger-26', 'RPD', 'FiNN', 'MG34', 'M91', 'SA87',
-                        'Stoner 63', 'Bruen Mk9', 'M60', 'CW AUG', 'M16', 'DMR 14', 'Type 63', 'CARV.2', 'R1 Shadowhunter', 
-                        'SKS', 'Crossbow', 'MK2 Carbine', 'EBR-14', 'Kar98k', 'SP-R 208', 'LW3-Tundra', 'Pelington 703', 
-                        'ZRG 20MM', 'M82', 'AX-50', 'HDR', 'Rytec AMR', 'Dragunov']
+    const gunsList = ['FAL', 'M4A1', 'XM4', 'FFAR 1', 'M13', 'Kilo 141', 'CW AK-47', 'Grau 5.56',
+                    'FARA 83', 'CR-56 AMAX', 'MW MP5', 'LC10', 'MAC-10', 'PPSh-41', 'Gallo SA12', 'PKM',
+                    'Bruen Mk9', 'CW AUG', 'M16', 'DMR 14', 'CARV.2', 'Kar98k', 'AX-50', 'RAM-7',
+                    'Bullfrog', 'AN-94', 'FN Scar 17', 'MW AK-47', 'MP7', 'Uzi', 'Fennec', 'MW AUG',
+                    'ISO', 'Origin 12', 'VLK Rogue', 'R9-0', 'Streetsweeper', 'Holger-26', 'FiNN',
+                    'SP-R 208', 'Sykov', 'CW MP5', 'AK-74u', 'KSP-45', 'Krig 6', 'QBZ 83', 'Stoner 63',
+                    'Pellington', 'FARA83', 'Groza', 'HDR', 'Oden', 'PP19 Bizon', 'JAK-12', 'SA87',
+                    'CW 1911', 'MW 1911', 'Diamatti', 'FR 5.56', 'P90', 'Model 680', 'AS VAL',
+                    'M91', 'Renetti', '.357 Magnums', 'Swiss K31', 'Type 63']
     const [input, setInput] = useState("")
     const [data, setData] = useState({})
     const [isToggled, setIsToggled] = useState(false);
@@ -140,7 +141,7 @@ function Search(){
                     <div>
                         <p>Loadouts for every Gun in Warzone!</p>
                         <p>...From Aydan, Symfuhny, JoeWo, Huskerrs, 
-                            SuperEvan, Nickmercs, Cloakzy, TeePee, and Crowder</p>
+                        Cloakzy, Nickmercs, TeePee, Crowder, and SuperEvan</p>
                     </div>
                 </div>
             </div>
@@ -160,7 +161,7 @@ function Search(){
                                     <Form.Field>
                                         <input
                                             type="text"
-                                            placeholder={isToggled ? "Ex. Aydan, Symfuhny, Huskerrs, JoeWo, etc."
+                                            placeholder={isToggled ? "Ex. Aydan, Symfuhny, JoeWo, Huskerrs, Cloakzy etc."
                                                                     : "Ex. CR-56 AMAX, CW AK-47, M4A1, XM4, etc."}
                                             onChange={handleChange}
                                             required
