@@ -1,3 +1,3 @@
 <h1 align="center">WZClasses</h1>
 <p align="center"><img src="https://github.com/Amgg12301/WZClasses/blob/main/wzclasses-logo.png"></p>
-<p align="center">This is your one-stop shop to easily find all loadouts for any Warzone gun or for a specific content creator!</p>
+<p align="center">This is your one-stop shop to easily find all loadouts for any Warzone gun or for a specific content creator! Loadouts are for both Modern Warfare and Cold War weapons in Warzone. The creators used are Aydan, Symfuhny, Huskerrs, JoeWo, Cloakzy, Nickmercs, TeePee and Crowder. Finding new loadouts whenever the meta changes is now much easier with this website for the future!</p>
