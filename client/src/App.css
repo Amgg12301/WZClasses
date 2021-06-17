@@ -77,7 +77,7 @@ a:hover {
   width: 100%;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 60px;
+  padding-top: 50px;
   position: static;
   background-repeat: no-repeat;
   background-size: cover;
@@ -246,6 +246,10 @@ a:hover {
 }
 
 @media screen and (pointer: coarse) and (hover: none){
+  .app {
+    font-family: Helvetica;
+  }
+
   .home #logo {
     font-weight: 600;
     font-variant: small-caps;
@@ -272,9 +276,9 @@ a:hover {
   }
 
   .intro-text {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 23px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
   }
 
   .search-text {
@@ -283,8 +287,8 @@ a:hover {
   }
 
   .search {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     float: none;
     width: 100%;
   }
@@ -309,7 +313,7 @@ a:hover {
   }
 
   .loadout {
-    padding-top: 80px;
+    padding-top: 70px;
   }
 
   .loadouts-button {
@@ -336,6 +340,7 @@ a:hover {
     padding-right: 10px;
     padding-bottom: 50px;
     color: black;
+    font-size: 15px;
   }
   .cards #card {
     width: 90%;
