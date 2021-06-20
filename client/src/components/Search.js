@@ -17,7 +17,7 @@ function Search(){
                     'SP-R 208', 'Sykov', 'CW MP5', 'AK-74u', 'KSP-45', 'Krig 6', 'QBZ 83', 'Stoner 63',
                     'Pellington', 'FARA83', 'Groza', 'HDR', 'Oden', 'PP19 Bizon', 'JAK-12', 'SA87',
                     'CW 1911', 'MW 1911', 'Diamatti', 'FR 5.56', 'P90', 'Model 680', 'AS VAL',
-                    'M91', 'Renetti', '.357 Magnums', 'Swiss K31', 'Type 63', 'MG 82', 'C58', 'OTs 9']
+                    'M91', 'Renetti', '.357 Magnums', 'Swiss K31', 'Type 63', 'MG 82', 'C58', 'OTs 9', 'Milano 821']
     const [input, setInput] = useState("")
     const [data, setData] = useState({})
     const [isToggled, setIsToggled] = useState(false);
