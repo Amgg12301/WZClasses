@@ -3,7 +3,8 @@ html {
 }
 
 .app {
-  font-family: Comic Sans MS, Comic Sans;
+  font-family: sans-serif;
+  font-weight: 400;
   color: black;
   background-image: url('./background.jpg');
   background-repeat: no-repeat;
@@ -62,10 +63,6 @@ a:hover {
   width: 150px;
 }
 
-.search-button-div {
-  padding-top: 25px;
-}
-
 .intro-text {
   font-size: 30px;
   padding-top: 10px;
@@ -95,7 +92,7 @@ a:hover {
 
 .loadout #name {
   padding-right: 435px;
-  font-family: Comic Sans MS, Comic Sans;
+  font-family: sans-serif;
 }
 
 .cards {
@@ -167,6 +164,7 @@ a:hover {
 
 .toggle-form {
   display: inline-flex;
+  position: absolute;
 }
 
 .toggle-form #title {
@@ -186,6 +184,14 @@ a:hover {
   padding-top: 30px;
   padding-right: 10px;
   font-size: 16px;
+}
+
+.form-field-div, .search-button-div {
+  padding-top: 25px;
+}
+
+.search-button-div {
+  padding-top: 25px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -246,10 +252,6 @@ a:hover {
 }
 
 @media screen and (pointer: coarse) and (hover: none){
-  .app {
-    font-family: Helvetica;
-  }
-
   .home #logo {
     font-weight: 600;
     font-variant: small-caps;
@@ -305,13 +307,6 @@ a:hover {
     float: right;
   }
 
-  .toggle-form {
-    display: inline-flex;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    position: relative;
-  }
-
   .loadout {
     padding-top: 70px;
   }
@@ -320,6 +315,7 @@ a:hover {
     padding-left: 95px;
     padding-right: 95px;
     padding-top: 10px;
+    display: none;
   }
 
   .loadout #name {

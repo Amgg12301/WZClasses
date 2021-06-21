@@ -15,10 +15,11 @@ function Search(){
                     'Bullfrog', 'AN-94', 'FN Scar 17', 'MW AK-47', 'MP7', 'Uzi', 'Fennec', 'MW AUG',
                     'ISO', 'Origin 12', 'VLK Rogue', 'R9-0', 'Streetsweeper', 'Holger-26', 'FiNN',
                     'SP-R 208', 'Sykov', 'CW MP5', 'AK-74u', 'KSP-45', 'Krig 6', 'QBZ 83', 'Stoner 63',
-                    'Pellington', 'FARA83', 'Groza', 'HDR', 'Oden', 'PP19 Bizon', 'JAK-12', 'SA87',
+                    'Pellington', 'Groza', 'HDR', 'Oden', 'PP19 Bizon', 'JAK-12', 'SA87',
                     'CW 1911', 'MW 1911', 'Diamatti', 'FR 5.56', 'P90', 'Model 680', 'AS VAL',
                     'M91', 'Renetti', '.357 Magnums', 'Swiss K31', 'Type 63', 'MG 82', 'C58', 'OTs 9', 
-                    'Milano 821', 'SKS']
+                    'Milano 821', 'SKS', 'Crossbow', '725', 'Striker 45', 'MG34', 'EBR-14', 'MK2 Carbine',
+                    'Dragunov', 'Rytec AMR', 'X16', '.50 GS', 'M19']
     const [input, setInput] = useState("")
     const [data, setData] = useState({})
     const [isToggled, setIsToggled] = useState(false);

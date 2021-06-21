@@ -11,6 +11,7 @@ function Loadout(){
     var description = ""
     var meta = ""
     var socials = ""
+    var typeOfPlayer = ""
     var list = []
 
     let location = useLocation()
@@ -59,10 +60,11 @@ function Loadout(){
                                     {data[i]["Laser"]}<br></br><b>Ammunition: </b>{data[i]["Ammunition"]}<br></br>
                                     <b>Optic: </b>{data[i]["Optic"]}<br></br><b>Rear Grip: </b>{data[i]["Rear Grip"]}
                                     <br></br><b>Stock: </b>{data[i]["Stock"]}<br></br><b>Perk: </b>{data[i]["Perk"]}</p>
-                            
+                typeOfPlayer = <p>{data[i]["Type"]}</p>
                 list.push(
                         <Card id="card">
                             <Card.Content header = {creatorName} />
+                            <Card.Content meta = {typeOfPlayer} />
                             <Card.Content description = {description} />
                         </Card>)
             }
