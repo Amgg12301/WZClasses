@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "aws": "*",
     "aws-cli": "^0.0.2",
+    "papaparse": "^5.3.1",
     "react": "^17.0.2",
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",

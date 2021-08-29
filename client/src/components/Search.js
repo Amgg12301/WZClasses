@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, Container, Grid, Icon } from 'semantic-ui-react';
-import Tabletop from "tabletop";
 import { isMobile } from 'react-device-detect';
 import Toggle from './Toggle';
 
@@ -126,15 +125,6 @@ function Search(){
 
         goToLoadouts(arr)
     }
-
-    useEffect(() => {
-        Tabletop.init({
-          key: API_KEY,
-          simpleSheet: true,
-        }).then(function (data) {
-          setData(data)
-        })
-    }, [API_KEY])
 
     return (
         <div>
